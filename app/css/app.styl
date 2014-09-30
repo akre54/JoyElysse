@@ -9,15 +9,9 @@ header
   display: flex
   flex-direction: row
   flex-wrap: wrap
+  justify-content: center
   width: 100%
   background-color: rgba(39, 36, 34, .9)
-
-
-#header__inner
-  margin-right: auto
-  margin-left: auto
-  width: 480px
-  height: 100%
 
 
 #header__title
@@ -40,14 +34,21 @@ header
     text-align: center
 
 
-#header__links
-  ul
-    float: left
-    list-style: none
-    margin: 0
+.navigation
+  list-style: none
+  display: flex
+  justify-content: center
 
   a, a:visited
     color: rgb(162, 151, 144)
     text-decoration: none
+    display: block
+    padding: 1em
+    font-size: 25px
 
 
+footer
+  position: fixed
+  bottom: 0
+  display: flex
+  justify-content: center
