@@ -1,8 +1,22 @@
 @import "grid.styl"
 
-html, body, #content
+/////////////////
+// PAGE STYLES //
+/////////////////
+
+html, body
   height: 100%
 
+body
+  background-image: url('../assets/images/flower-pattern.jpg')
+  background-size: cover
+  -webkit-user-select: none;
+
+
+
+////////////
+// HEADER //
+////////////
 
 header
   position: fixed
@@ -37,18 +51,68 @@ header
 .navigation
   list-style: none
   display: flex
-  justify-content: center
+  padding-left: 0
 
-  a, a:visited
-    color: rgb(162, 151, 144)
-    text-decoration: none
+  a
     display: block
     padding: 1em
     font-size: 25px
 
+  a, a:visited
+    color: rgb(162, 151, 144)
+    text-decoration: none
+
+
+
+/////////////
+// CONTENT //
+/////////////
+
+#content-container
+  position: static
+  padding: 200px
+
+#bio p
+  width: 200px
+  float: left
+  color: white
+
+#headshot
+  width: 250px
+  float: left
+  margin-left: 50px
+
+
+////////////
+// FOOTER //
+////////////
 
 footer
   position: fixed
   bottom: 0
   display: flex
-  justify-content: center
+  flex-direction: row
+  justify-content: space-around
+  width: 100%
+
+  .social__links
+    list-style: none
+    display: flex
+
+  a, a:visited
+    color: rgb(130, 130, 130)
+    text-decoration: none
+    display: block
+    padding: 1em
+
+
+////////////////////
+// RESPONSIVENESS //
+////////////////////
+
+@media screen and (max-width: 670px)
+  header
+    position: static
+
+  #header__title
+    width: 100%

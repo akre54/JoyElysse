@@ -22,7 +22,8 @@ module.exports = {
       { test: /\.styl$/,   loader: 'style!css!stylus' },
       { test: /\.coffee$/, loader: 'coffee' },
 
-      // Load PNGs
+      // load images
+      { test: /\.jpg$/,    loader: 'url-loader?mimetype=image/jpg'},
       { test: /\.png$/,    loader: 'url-loader?mimetype=image/png'},
 
       // required for bootstrap icons
