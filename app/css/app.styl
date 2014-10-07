@@ -13,59 +13,6 @@ body
   -webkit-user-select: none;
   font-family: 'Raleway', sans-serif
 
-
-////////////
-// HEADER //
-////////////
-
-header
-  position: fixed
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: center
-  width: 100%
-  background-color: rgba(39, 36, 34, .9)
-
-
-#header__title
-  background-color: rgb(230, 103, 61)
-  float: left
-  padding: 10px
-  width: 210px
-
-h1
-  color: #fff
-  font-family: 'Great Vibes', cursive
-  margin: 0
-  text-align: center
-
-h2, h3
-  color: #fff
-  font-family: 'Bad Script', cursive
-  margin: 0
-  text-align: center
-
-
-.navigation
-  list-style: none
-  display: flex
-  padding-left: 0
-
-  a
-    display: block
-    padding: 1em
-    font-size: 25px
-
-  a, a:visited
-    color: rgb(162, 151, 144)
-    text-decoration: none
-
-  a:hover
-    margin-top: -2px
-    border-top: 2px solid rgb(162, 151, 144)
-
-
 /////////////
 // CONTENT //
 /////////////
@@ -74,27 +21,12 @@ h2, h3
   position: static
   padding: 150px 200px
 
-.content
-  width: 600px
-
-  h2
-    text-align: left
-    font-size: 50px
-    margin-bottom: 20px
-    margin-left: 50px
-
-#bio p
-  float: left
-  color: white
-  margin-top: 0
-  width: 250px
-
-#headshot
-  float: left
-  border-radius: 25px
-  width: 250px
-  margin-left: 50px
-
+h1
+  color: #fff
+  font-family: 'Bad Script', cursive
+  font-size: 72px
+  margin-left: 200px
+  text-align: center
 
 ////////////
 // FOOTER //
@@ -124,14 +56,12 @@ footer
 ////////////////////
 
 @media screen and (max-width: 670px)
-  header, footer
+  body
+    background-image: none
+    background-color: #f1eee7
+
+  footer
     position: static
-
-  #header__title
-    width: 100%
-
-  .content
-    width: auto
 
   #content-container
     padding: 50px
