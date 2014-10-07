@@ -8,10 +8,10 @@ html, body
   height: 100%
 
 body
-  background-image: url('../assets/images/flower-pattern.jpg')
+  background-image: url('../assets/images/joy-headshot-full.jpg')
   background-size: cover
   -webkit-user-select: none;
-
+  font-family: 'Raleway', sans-serif
 
 
 ////////////
@@ -34,18 +34,17 @@ header
   padding: 10px
   width: 210px
 
-  h1
-    color: #fff
-    font-family: 'Great Vibes', cursive
-    margin: 0
-    text-align: center
+h1
+  color: #fff
+  font-family: 'Great Vibes', cursive
+  margin: 0
+  text-align: center
 
-
-  h3
-    color: #fff
-    font-family: 'Bad Script', cursive
-    margin: 0
-    text-align: center
+h2, h3
+  color: #fff
+  font-family: 'Bad Script', cursive
+  margin: 0
+  text-align: center
 
 
 .navigation
@@ -62,6 +61,9 @@ header
     color: rgb(162, 151, 144)
     text-decoration: none
 
+  a:hover
+    margin-top: -2px
+    border-top: 2px solid rgb(162, 151, 144)
 
 
 /////////////
@@ -70,16 +72,27 @@ header
 
 #content-container
   position: static
-  padding: 200px
+  padding: 150px 200px
+
+.content
+  width: 600px
+
+  h2
+    text-align: left
+    font-size: 50px
+    margin-bottom: 20px
+    margin-left: 50px
 
 #bio p
-  width: 200px
   float: left
   color: white
+  margin-top: 0
+  width: 250px
 
 #headshot
-  width: 250px
   float: left
+  border-radius: 25px
+  width: 250px
   margin-left: 50px
 
 
@@ -111,8 +124,14 @@ footer
 ////////////////////
 
 @media screen and (max-width: 670px)
-  header
+  header, footer
     position: static
 
   #header__title
     width: 100%
+
+  .content
+    width: auto
+
+  #content-container
+    padding: 50px
