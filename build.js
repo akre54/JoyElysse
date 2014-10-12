@@ -8,7 +8,7 @@ var fs = require('fs'),
     rimraf = require('rimraf');
 
 var appDir = __dirname + '/app',
-    publicDir = __dirname + '/public',
+    publicDir = process.env.ELYSSE_PUBLIC_DIR || __dirname + '/public',
     cssDir = publicDir + '/css',
     appStyl = __dirname + '/app/css/app.styl',
     appCss = cssDir + '/app.css';
