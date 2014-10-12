@@ -13,20 +13,61 @@ body
   -webkit-user-select: none;
   font-family: 'Raleway', sans-serif
 
+////////////
+// HEADER //
+////////////
+
+header
+  position: fixed
+  top: 0
+  right: 1em
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+
+  .social__links
+    list-style: none
+    display: flex
+
+  a, a:visited
+    color: rgb(130, 130, 130)
+    text-decoration: none
+    display: block
+    padding: 1em
+
+.fa::before
+  font-size: 30px
+
+
 /////////////
 // CONTENT //
 /////////////
 
 #content-container
   position: static
-  padding: 150px 200px
+  padding: 200px 0
+  margin-left: 550px
+  width: 900px
 
-h1
-  color: #fff
-  font-family: 'Bad Script', cursive
-  font-size: 72px
-  margin-left: 200px
-  text-align: center
+  h1
+    color: #fff
+    font-family: 'Tangerine', cursive
+    font-size: 214px
+    font-weight: normal
+    text-align: center
+    margin: 0
+
+  h2
+    text-align: center
+    color: #fff
+
+    a, a:visited
+      color: #fff
+      font-style: italic
+      text-decoration: none
+
+#headshot
+  display: none
 
 ////////////
 // FOOTER //
@@ -50,18 +91,32 @@ footer
     display: block
     padding: 1em
 
+.fa::before
+  margin-right: 5px
+
 
 ////////////////////
 // RESPONSIVENESS //
 ////////////////////
 
-@media screen and (max-width: 670px)
+@media screen and (max-width: 1200px)
   body
     background-image: none
     background-color: #f1eee7
 
-  footer
+  header
     position: static
 
   #content-container
     padding: 50px
+    margin-left: 0
+    width: auto
+
+  #headshot
+    display: block
+    border-radius: 10%
+    margin: 10% auto
+    width: 90%
+
+  .social__links
+    padding-left: 0
