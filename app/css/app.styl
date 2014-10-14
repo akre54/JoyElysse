@@ -38,8 +38,7 @@ header
     padding: 1em
 
 .fa::before
-  font-size: 30px
-  margin-right: 5px
+  font-size: 25px
 
 
 /////////////
@@ -50,7 +49,7 @@ header
   position: static
   padding: 200px 0
   margin-left: 550px
-  width: 900px
+  width: 450px
 
   h1
     color: #fff
@@ -64,10 +63,10 @@ header
     text-align: center
     color: #fff
 
-    a, a:visited
-      color: #fff
-      font-style: italic
-      text-decoration: none
+  .nav-link
+    color: #fff
+    font-style: italic
+    text-decoration: none
 
 #headshot
   display: none
@@ -76,10 +75,12 @@ header
 // RESPONSIVENESS //
 ////////////////////
 
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 960px)
   body
     background-image: none
     background-color: #f1eee7
+    overflow: auto
+
 
   header
     position: static
@@ -97,3 +98,12 @@ header
 
   .social__links
     padding-left: 0
+
+@media screen and (max-width: 640px)
+
+  .nav-link
+    display: block
+    width: 100%
+
+  .pipe
+    display: none
