@@ -12,15 +12,18 @@ var appDir = __dirname + '/app',
     appStyl = __dirname + '/app/css/app.styl',
     appCss = cssDir + '/app.css';
 
-del([publicDir], {force: true}, function() {
+del([publicDir], {force: true}, function(err) {
+  if (err) console.log(err);
   mkdirp.sync(publicDir);
-  ncp(appDir, publicDir, {filter: function(file) { return !/.(styl|coffee)$/.test(file); }}, function() {
+  ncp(appDir, publicDir, {filter: function(file) { return !/.(styl|coffee)$/.test(file); }}, function(err) {
+    if (err) console.log(err);
     stylus(fs.readFileSync(appStyl, 'utf8'))
       .set('filename', appStyl)
       .include(require('nib').path)
       .render(function(err, css) {
         if (err) console.log(err);
         fs.createWriteStream(appCss).write(css);
+        console.log('done');
       });
   });
 });
