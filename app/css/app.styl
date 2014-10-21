@@ -13,9 +13,22 @@ body
   background-position: 0% center
   background-attachment: fixed
   background-size: contain
+  transition: background-color 0.5s ease-in-out
+
   -webkit-user-select: none;
   font-family: 'Raleway', sans-serif
   overflow: hidden
+
+  &.shows-page
+    background-color: rgb(210, 94, 79)
+    background-size: cover
+    background-image: url('../assets/images/shows-bg.jpg')
+  &.mailing-list-page
+    background-color: rgb(240, 237, 228)
+    background-image: url('../assets/images/joy-headshot-full.jpg')
+  &.contact-page
+    background-color: rgb(240, 237, 228)
+    background-image: url('../assets/images/joy-headshot-full.jpg')
 
 ////////////
 // HEADER //
