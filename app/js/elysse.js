@@ -2,19 +2,17 @@
 
   var each = [].forEach;
 
-  var toggleCloseBtn = function() {
+  var setActivePage = function() {
 
     var previous = document.querySelector('.active');
     previous && previous.classList.remove('active');
 
     var id = (location.hash || '#home') + '-page';
     document.querySelector(id).classList.add('active');
-
-    document.querySelector('.active .close-btn').classList.toggle('show', id !== '#home');
   }
 
-  window.addEventListener('hashchange', toggleCloseBtn);
-  toggleCloseBtn();
+  window.addEventListener('hashchange', setActivePage);
+  setActivePage();
 
 
   // Change pages
