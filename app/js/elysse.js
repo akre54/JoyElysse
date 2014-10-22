@@ -3,8 +3,7 @@
   var each = [].forEach;
 
   var toggleCloseBtn = function() {
-    var hide = (location.hash === '#home' || location.hash === '');
-    document.getElementById('close-btn').style.display = hide ? 'none' : 'block';
+    document.getElementById('close-btn').classList.toggle('show', location.hash.length);
 
     // var previous = document.querySelector('.active');
     // previous && previous.classList.remove('active');

@@ -19,7 +19,7 @@ gulp.task('copy', function() {
 
 gulp.task('build:style', function() {
   return gulp.src(appDir + '/**/*.styl')
-    .pipe(stylus({use: nib()}))
+    .pipe(stylus({use: nib(), linenos: true}))
     .pipe(gulp.dest(publicDir));
 });
 
