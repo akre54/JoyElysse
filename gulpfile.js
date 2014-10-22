@@ -9,7 +9,7 @@ var appDir = __dirname + '/app',
 
 
 gulp.task('clean', function(cb) {
-  del([publicDir + '/**'], {force: true}, cb);
+  del([publicDir + '/**/*'], {force: true}, cb);
 });
 
 gulp.task('copy', function() {
