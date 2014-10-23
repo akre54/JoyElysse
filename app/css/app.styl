@@ -62,15 +62,12 @@ header
 
 for i in 2 3 4
   .page:nth-of-type({i}).active
+      transition: transform (i * .4s) ease-in-out
       transform: translateY((i - 1) * -100%)
-
-.nav-link
-  color: #fff
-  font-style: italic
-  text-decoration: none
 
 .close-btn
   color: rgba(0, 0, 0, .5)
+  margin: .5em
 
 h1
   color: #fff
@@ -86,6 +83,11 @@ nav
   font-weight: bold
   color: #fff
 
+  a
+    color: #fff
+    font-style: italic
+    text-decoration: none
+
 #home-page
   background-image: url('../assets/images/joy-headshot-full.jpg')
   background-size: contain
@@ -99,6 +101,9 @@ nav
   background-color: rgb(210, 94, 79)
   background-size: cover
   background-image: url('../assets/images/shows-bg.jpg')
+
+  .content
+    padding: 1em
 
 #mailing-list-page
   background-color: rgb(240, 237, 228)
