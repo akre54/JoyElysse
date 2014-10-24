@@ -14,6 +14,11 @@
   window.addEventListener('hashchange', setActivePage);
   setActivePage();
 
+  // handle escape key
+  document.addEventListener('keyup', function(e) {
+    if (e.which === 27) location.hash = '#home';
+  })
+
   // HTML5's :invalid psudo-selector is too aggressive (invalid on page load)
   var checkValidity = function() { this.classList.toggle('invalid', !this.validity.valid); }
   var email = document.querySelector('input[type="email"');
