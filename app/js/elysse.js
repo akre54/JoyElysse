@@ -14,8 +14,9 @@
   window.addEventListener('hashchange', setActivePage);
   setActivePage();
 
-  document.getElementById('signup').addEventListener('submit', function() {
-    debugger
-    return false;
-  });
+  // HTML5's :invalid psudo-selector is too aggressive (invalid on page load)
+  var checkValidity = function() { this.classList.toggle('invalid', !this.validity.valid); }
+  var email = document.querySelector('input[type="email"');
+  email.addEventListener('blur', checkValidity);
+  email.addEventListener('keyup', checkValidity);
 })();
