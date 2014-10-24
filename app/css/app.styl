@@ -113,10 +113,6 @@ nav
   .bit-share-links, .bit-share-text
     display: none
 
-  tr:not(.bit-header)
-    -webkit-user-select: initial
-    user-select: initial
-
 #mailing-list-page
   background-color: rgb(240, 237, 228)
   background-image: url('../assets/images/contact-bg.jpg')
@@ -139,6 +135,9 @@ nav
     color: #555
 
 
+#contact__email, #shows-page tr:not(.bit-header)
+  -webkit-user-select: initial
+  user-select: initial
 
 ///////////////////////
 // Mailing list form //
