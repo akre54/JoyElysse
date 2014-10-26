@@ -1,7 +1,5 @@
 (function() {
 
-  var each = [].forEach;
-
   var setActivePage = function() {
 
     var previous = document.querySelector('.active');
@@ -17,9 +15,9 @@
   // handle escape key
   document.addEventListener('keyup', function(e) {
     if (e.which === 27) location.hash = '#home';
-  })
+  });
 
-  // HTML5's :invalid psudo-selector is too aggressive (invalid on page load)
+  // HTML5's :invalid psudo-selector is too aggressive (it's invalid on page load)
   var checkValidity = function() { this.classList.toggle('invalid', !this.validity.valid); }
   var email = document.querySelector('input[type="email"');
   email.addEventListener('blur', checkValidity);

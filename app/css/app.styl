@@ -5,7 +5,7 @@
 html, body
   height: 100%
   min-width: 300px
-  font-family: 'Raleway', sans-serif
+  font-family: 'Pontano Sans', sans-serif
   color: #555
   overflow: hidden
   -webkit-user-select: none
@@ -71,7 +71,7 @@ header
 
 for i in 2 3 4
   .page:nth-of-type({i})
-    transform: translateY((i - 2) * -100%)
+    transform: translateY(i * -100%)
     &.active
       transform: translateY((i - 1) * -100%)
 
@@ -97,11 +97,10 @@ nav
 #shows-page
   background-color: rgb(210, 94, 79)
   background-image: url('../assets/images/shows-bg.jpg')
+  color: #ccc
 
   .content
-    color: #ccc
     padding: 0
-    width: auto
 
   .bit-share-links, .bit-share-text
     display: none
@@ -140,7 +139,7 @@ nav
   font-size: 18px
 
 .input-group-addon
-  padding: 0 1em
+  padding: 0 .5em
   border-radius: 2px 0 0 2px
   background-color: rgba(238, 238, 238, .8)
   border: 1px solid #ccc
@@ -179,10 +178,10 @@ input[type="submit"]
   background-color: #fff
   padding: 7px
 
+
 ////////////////////
 // Responsiveness //
 ////////////////////
-
 
 @media only screen and (orientation: portrait)
   html, body
