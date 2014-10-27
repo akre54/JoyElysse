@@ -13,7 +13,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('copy', function() {
-  return gulp.src([appDir + '/**/*.js', appDir + '/index.html', appDir + '/**/*.jpg', appDir + '/**/*.ico'])
+  return gulp.src([appDir + '/**/*.{js,jpg,ico,html}'])
     .pipe(gulp.dest(publicDir));
 });
 
