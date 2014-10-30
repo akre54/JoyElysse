@@ -5,6 +5,8 @@ var gulp = require('gulp'),
 var appDir = __dirname + '/app',
     publicDir = process.env.ELYSSE_PUBLIC_DIR || __dirname + '/public';
 
+// remove dumb retina hack
+require('styl/node_modules/rework').at2x = function() { return function() {} };
 
 gulp.task('clean', function(cb) {
   del([publicDir + '/**/*'], {force: true}, cb);
