@@ -1,8 +1,6 @@
 var gulp = require('gulp'),
     del = require('del'),
-    nib = require('nib'),
-    stylus = require('gulp-stylus');
-
+    styl = require('gulp-styl');
 
 var appDir = __dirname + '/app',
     publicDir = process.env.ELYSSE_PUBLIC_DIR || __dirname + '/public';
@@ -19,7 +17,7 @@ gulp.task('copy', function() {
 
 gulp.task('build:style', function() {
   return gulp.src(appDir + '/**/*.styl')
-    .pipe(stylus({use: nib(), linenos: true}))
+    .pipe(styl({ whitespace: true }))
     .pipe(gulp.dest(publicDir));
 });
 
