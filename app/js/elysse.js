@@ -1,7 +1,6 @@
 (function() {
 
   var setActivePage = function() {
-
     var previous = document.querySelector('.active');
     previous && previous.classList.remove('active');
 
@@ -18,8 +17,7 @@
   });
 
   // HTML5's :invalid psudo-selector is too aggressive (it's invalid on page load)
-  var checkValidity = function() { this.classList.toggle('invalid', !this.validity.valid); }
   var email = document.querySelector('input[type="email"');
-  email.addEventListener('blur', checkValidity);
-  email.addEventListener('keyup', checkValidity);
+  email.addEventListener('blur', function() { this.classList.toggle('invalid', !this.validity.valid); });
+  email.addEventListener('keyup', function() { this.classList.remove('invalid'); });
 })();
