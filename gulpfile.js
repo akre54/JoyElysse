@@ -23,7 +23,7 @@ gulp.task('build:style', function() {
     .pipe(gulp.dest(publicDir));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['copy', 'build:style'], function() {
   return gulp.watch(appDir + '/**', ['copy', 'build:style']);
 });
 
