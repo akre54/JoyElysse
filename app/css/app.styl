@@ -7,7 +7,7 @@ html, body
   min-width: 300px
   font-family: 'Pontano Sans', sans-serif
   font-size: 100%
-  color: #555
+  color: rgb(64, 63, 61)
   overflow: hidden
   user-select: none
 
@@ -44,7 +44,7 @@ header
 
     a
       padding: 1rem
-      color: rgb(130, 130, 130)
+      color: rgb(127, 126, 121)
 
 
 /////////////
@@ -105,7 +105,7 @@ nav
 #shows-page
   background-color: rgb(210, 94, 79)
   background-image: url('../assets/images/shows-bg.jpg')
-  color: #ccc
+  color: #e5e3da
 
   .content
     padding: 0
@@ -123,14 +123,16 @@ nav
 #contact-page
   background-color: rgb(240, 237, 228)
   background-image: url('../assets/images/joy-headshot-full.jpg')
-  background-size: initial
+  // background-size: initial // reason for this???
+  background-size: contain
 
   .content
-    padding-left: 110vh
+    transition: padding-left .5s ease-in-out
+    padding-left: 80vh
     max-width: 22rem
 
   a
-    color: #555
+    color: rgb(64, 63, 61)
 
 
 #contact__email, #shows-page tr:not(.bit-header)
@@ -142,22 +144,21 @@ nav
 
 .input-group
   margin: 1rem 0
-  display: inline-table
-  font-size: 1.2em
+  display: inline-flex
+  font-size: 1.2rem
 
 .input-group-addon
-  padding: 0 .5em
+  padding: .5rem
   border-radius: 2px 0 0 2px
   background-color: rgba(238, 238, 238, .8)
-  border: 1px solid #ccc
-  display: table-cell
+  border: 1px solid #e5e3da
   border-right: 0
 
 label
   display: block
 
 input[type="email"]
-  display: table-cell
+  flex: 1
   padding: 7px
   line-height: 1.33
   background-color: rgba(255, 255, 255, .8)
@@ -181,7 +182,7 @@ input[type="submit"]
   line-height: 1.33
   border: 1px solid #ccc
   border-radius: 2px
-  background-color: #fff
+  background-color: rgba(238, 238, 238, .8)
   padding: .5rem
 
 
@@ -228,9 +229,23 @@ input[type="submit"]
 
 @media screen and (max-device-width: 480px)
   h1
-    font-size: 11em !important
+    font-size: 11rem !important
 
 // High-rez unscaled screens (e.g. Kindle Fire HDX)
 @media only screen and (min-width: 2550px) and (-webkit-max-device-pixel-ratio: 2)
   html
     font-size: 200% !important
+
+
+// iPhone / old android < 6 in landscape
+@media only screen and (orientation: landscape) and (max-height: 370px)
+  html
+    font-size: 85% !important
+
+  #contact-page .content
+    padding-left: 1rem !important
+
+// Portrait iPads
+@media screen and (min-aspect-ratio: 5/3)
+  #contact-page .content
+    padding-left: 110vh !important
