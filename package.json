@@ -3,17 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "del": "^0.1.1",
-    "gulp": "^3.8.8",
-    "gulp-styl": "^1.0.1",
-    "http-server": "^0.7.2"
+    "autoprefixer-core": "^5.1.9",
+    "coffee-script": "^1.9.2",
+    "css-loader": "^0.10.1",
+    "extract-text-webpack-plugin": "^0.5.0",
+    "file-loader": "^0.8.1",
+    "html-webpack-plugin": "^1.1.0",
+    "http-server": "^0.7.2",
+    "postcss-loader": "^0.3.0",
+    "style-loader": "^0.10.2",
+    "stylus-loader": "^1.1.0",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.8.4",
+    "webpack-dev-server": "^1.8.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/akre54/JoyHanson.git"
   },
   "scripts": {
-    "start": "gulp build && http-server"
+    "start": "webpack-dev-server",
+    "build": "rm -rf public && webpack"
   },
   "engines": {
     "node": "0.10.x"
