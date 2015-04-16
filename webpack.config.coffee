@@ -8,7 +8,6 @@ autoprefixer = require 'autoprefixer-core'
 module.exports =
   entry:
     elysse: './app/js/elysse.js'
-    style: './app/css/app.styl'
   output:
     path: "#{__dirname}/public"
     filename: '[name].js'
@@ -23,7 +22,7 @@ module.exports =
     assets:
       main: 'public/elysse.js'
   plugins: [
-    new ExtractTextPlugin 'css/[name].css'
+    new ExtractTextPlugin 'style.css'
     new HtmlWebpackPlugin
       template: 'app/index.html'
   ]
