@@ -1,3 +1,13 @@
+//////////
+// VARS //
+//////////
+
+$main-text-color = rgb(64, 63, 61)
+$link-color = rgb(255, 255, 255)
+$hero-nav-color = rgb(204, 201, 194)
+
+
+
 /////////////////
 // PAGE STYLES //
 /////////////////
@@ -7,20 +17,20 @@ html, body
   min-width: 300px
   font-family: 'Pontano Sans', sans-serif
   font-size: 100%
-  color: rgb(64, 63, 61)
+  color: $main-text-color
   overflow: hidden
   user-select: none
 
 h1
-  color: rgb(255, 255, 255)
+  color: $hero-nav-color
   font-family: 'Tangerine', cursive
   font-size: 13em
   font-weight: normal
   text-align: center
   margin: 0
 
-a, .pipe
-  color: rgb(255, 255, 255)
+a
+  color: $link-color
   text-decoration: none
 
 ////////////
@@ -62,27 +72,11 @@ header
 
   transition: transform .6s ease-in-out
 
-// for i in 2 3 4
-//   .page:nth-of-type({i})
-//     transform: translateY(i * -100%)
-//     &.active
-//       transform: translateY((i - 1) * -100%)
-
-
-.page:nth-of-type(2)
-  transform: translateY(-200%)
-  &.active
-    transform: translateY(-100%)
-
-.page:nth-of-type(3)
-  transform: translateY(-300%)
-  &.active
-    transform: translateY(-200%)
-
-.page:nth-of-type(4)
-  transform: translateY(-400%)
-  &.active
-    transform: translateY(-300%)
+for i in 2 3 4
+  .page:nth-of-type({i})
+    transform: translateY(i * -100%)
+    &.active
+      transform: translateY((i - 1) * -100%)
 
 .content
   padding: 15% 0 15% 75vh
@@ -97,7 +91,13 @@ nav
   font-weight: bold
 
   a
+    color: $hero-nav-color
     font-style: italic
+    border-right: .1em solid
+    padding-right: .5em
+
+    &:last-of-type
+      border: none
 
 #home-page
   background-image: url('../assets/images/joy-headshot-full.jpg')
@@ -209,7 +209,7 @@ input[type="submit"]
     position: static
     margin: 0
 
-  a, h1, .pipe, .content
+  a, h1, .content
     color: #555 !important
 
   .page
