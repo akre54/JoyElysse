@@ -2,10 +2,11 @@ require('../css/app.styl')
 
 var setActivePage = function() {
   var previous = document.querySelector('.active');
-  previous && previous.classList.remove('active');
 
   var id = (location.hash || '#home') + '-page';
   document.querySelector(id).classList.add('active');
+
+  previous && previous.classList.remove('active');
 }
 
 window.addEventListener('hashchange', setActivePage);

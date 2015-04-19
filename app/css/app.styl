@@ -79,18 +79,21 @@ header
   height: 100%
   width: 100%
 
+  position: fixed
+
+  opacity: 0
+  visibility: hidden
+
   background-color: $page-bg-color
   background-repeat: no-repeat
   background-position: 0% center
-  background-size: cover
+  background-size: contain
 
-  transition: transform .6s ease-in-out
+  transition: opacity 1s ease-in-out
 
-for i in 2 3 4
-  .page:nth-of-type({i})
-    transform: translateY(i * -100%)
-    &.active
-      transform: translateY((i - 1) * -100%)
+  &.active
+    opacity: 1
+    visibility: visible
 
 .content
   padding: 15% 0 15% 75vh
@@ -115,11 +118,14 @@ nav
 
 #home-page
   background-image: url('../assets/images/joy-headshot-full.jpg')
-  background-size: contain
+
+  opacity: 1
+  visibility: visible
 
 #shows-page
   background-color: $shows-bg-color
   background-image: url('../assets/images/shows-bg.jpg')
+  background-size: cover
   color: #e5e3da
 
   .content
@@ -131,15 +137,15 @@ nav
 #mailing-list-page
   background-color: $mailing-list-bg-color
   background-image: url('../assets/images/contact-bg.jpg')
+  background-size: cover
 
   .content
     padding-left: 10%
 
 #contact-page
-  background-color: $contact-bg-color
-  background-image: url('../assets/images/joy-headshot-full.jpg')
-  // background-size: initial // reason for this???
-  background-size: contain
+  @extend #home-page
+
+  transition: none
 
   .content
     transition: padding-left .5s ease-in-out
