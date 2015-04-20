@@ -5,7 +5,7 @@ ExtractTextPlugin = require 'extract-text-webpack-plugin'
 
 autoprefixer = require 'autoprefixer-core'
 
-module.exports =
+module.exports = webpackConfig =
   watch: true
   entry:
     elysse: './app/js/elysse.js'
@@ -24,3 +24,8 @@ module.exports =
     new HtmlWebpackPlugin
       template: 'app/index.html'
   ]
+
+
+if process.env.PROD
+  webpackConfig.watch = false
+  webpackConfig.output.path = "#{__dirname}/../elyssemusic.com"
