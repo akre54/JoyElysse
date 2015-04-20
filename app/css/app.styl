@@ -90,11 +90,13 @@ header
   background-position: 0% center
   background-size: contain
 
-  transition: opacity 1s ease-in-out
+  transition: visibility 0s linear 1s, opacity 1s ease-in-out
 
   &.active
     opacity: 1
     visibility: visible
+
+    transition-delay: 0s
 
 .content
   padding: 15% 0 15% 75vh
