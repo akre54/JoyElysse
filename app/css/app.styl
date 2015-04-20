@@ -9,7 +9,7 @@ $contact-link-color    = rgb(64,  63,  61)
 $hero-nav-color        = rgb(255, 255, 255)
 
 $page-bg-color         = rgb(240, 237, 228)
-$contact-bg-color      = rgb(240, 237, 228)
+$contact-bg-color      = rgb(245, 241, 242)
 $mailing-list-bg-color = rgb(240, 237, 228)
 $shows-bg-color        = rgb(210, 94,  79)
 
@@ -24,7 +24,7 @@ $placeholder-color     = rgb(108, 94,  84)
 html, body
   height: 100%
   min-width: 300px
-  font-family: 'Pontano Sans', sans-serif
+  font-family: 'Open Sans Condensed', sans-serif
   font-size: 100%
   color: $main-text-color
   box-sizing: border-box
@@ -42,6 +42,7 @@ h1
   font-weight: normal
   text-align: center
   margin: 0
+  margin-bottom: .1em
 
 a
   color: $link-color
@@ -105,12 +106,13 @@ header
 nav
   text-align: center
   font-size: 1.5rem
-  font-weight: bold
 
   a
     color: $hero-nav-color
+    font-size: 2em
     font-style: italic
-    border-right: .1em solid
+    border-right: .05em solid
+    padding-left: .2em
     padding-right: .5em
 
     &:last-of-type
@@ -136,16 +138,15 @@ nav
 
 #mailing-list-page
   background-color: $mailing-list-bg-color
-  background-image: url('../assets/images/contact-bg.jpg')
+  background-image: url('../assets/images/mailing-list-bg.jpg')
   background-size: cover
 
   .content
     padding-left: 10%
 
 #contact-page
-  background-image: url('../assets/images/joy-headshot-full.jpg')
-
-  transition: none
+  background-image: url('../assets/images/contact-bg.jpg')
+  background-color: $contact-bg-color
 
   .content
     transition: padding-left .5s ease-in-out
@@ -229,10 +230,15 @@ input[type="submit"]
   header
     width: 100%
     position: static
+    align-items: center
     margin: 0
 
   a, h1, .content
     color: #555 !important
+
+
+  nav
+    display: none
 
   .page
     height: auto
@@ -243,6 +249,8 @@ input[type="submit"]
     background-color: transparent !important
     transform: none !important
     transition: none !important
+    opacity: 1
+    visibility: visible
 
   .content
     padding: 0 !important
