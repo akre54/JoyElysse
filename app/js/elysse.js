@@ -1,4 +1,5 @@
 require('../css/app.styl');
+require('file?name=favicon.ico!../assets/images/favicon.ico');
 
 var setActivePage = function() {
   var previous = document.querySelector('.active');
