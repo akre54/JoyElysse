@@ -6,9 +6,11 @@ var setActivePage = function() {
 
   var id = (location.hash || '#home') + '-page';
   document.querySelector(id).classList.add('active');
+
+  if (id === '#home-page') window.history.replaceState(null, document.title, '/');
 }
 
-window.addEventListener('hashchange', setActivePage);
+window.addEventListener('hashchange', setActivePage, false);
 setActivePage();
 
 // handle escape key
@@ -18,5 +20,5 @@ document.addEventListener('keyup', function(e) {
 
 // HTML5's :invalid psudo-selector is too aggressive (it's invalid on page load)
 var email = document.querySelector('input[type="email"');
-email.addEventListener('blur', function() { this.classList.toggle('invalid', !this.validity.valid); });
-email.addEventListener('keyup', function() { this.classList.remove('invalid'); });
+email.addEventListener('blur', function() { this.classList.toggle('invalid', !this.validity.valid); }, false);
+email.addEventListener('keyup', function() { this.classList.remove('invalid'); }, false);
