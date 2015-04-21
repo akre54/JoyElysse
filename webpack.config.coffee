@@ -30,5 +30,5 @@ module.exports = webpackConfig =
 
 if process.env.PROD
   webpackConfig.watch = false
-  webpackConfig.output.publicPath = 'http://elyssemusic.com'
+  webpackConfig.output.publicPath = 'http://elyssemusic.com/'
   webpackConfig.output.path = "#{__dirname}/../elyssemusic.com"
