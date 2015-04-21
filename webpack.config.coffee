@@ -2,6 +2,7 @@ webpack = require 'webpack'
 
 HtmlWebpackPlugin = require 'html-webpack-plugin'
 ExtractTextPlugin = require 'extract-text-webpack-plugin'
+rimraf            = require 'rimraf'
 
 autoprefixer = require 'autoprefixer-core'
 
@@ -20,6 +21,7 @@ module.exports = webpackConfig =
     ]
   postcss: [autoprefixer]
   plugins: [
+    apply: -> rimraf.sync "#{webpackConfig.output.path}/*"
     new ExtractTextPlugin 'style.css'
     new HtmlWebpackPlugin
       template: 'app/index.html'
