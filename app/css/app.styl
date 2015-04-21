@@ -9,7 +9,7 @@ $contact-link-color    = rgb(64,  63,  61)
 $hero-nav-color        = rgb(255, 255, 255)
 
 $page-bg-color         = rgb(240, 237, 228)
-$contact-bg-color      = rgb(239, 239, 241)
+$contact-bg-color      = rgb(236, 239, 235)
 $mailing-list-bg-color = rgb(240, 237, 228)
 $shows-bg-color        = rgb(210, 94,  79)
 
@@ -64,7 +64,7 @@ header
 h1
   color: $hero-nav-color
   font-family: 'Tangerine', cursive
-  font-size: 10em
+  font-size: 8em
   font-weight: normal
   text-align: center
   margin: 0
@@ -105,6 +105,7 @@ nav
   background-repeat: no-repeat
   background-position: 0% center
   background-size: contain
+  background-attachment: fixed
 
   transition: visibility 0s linear 1s, opacity 1s ease-in-out
 
@@ -262,10 +263,6 @@ input[type="submit"]
 
   .close-btn
     display: none
-
-@media screen and (max-device-width: 480px)
-  h1
-    font-size: 11rem !important
 
 // High-rez unscaled screens (e.g. Kindle Fire HDX)
 @media only screen and (min-width: 2550px) and (-webkit-max-device-pixel-ratio: 2)

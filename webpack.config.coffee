@@ -16,7 +16,7 @@ module.exports = webpackConfig =
   module:
     loaders: [
       { test: /\.styl$/, loader: ExtractTextPlugin.extract 'style-loader', 'css-loader!postcss-loader!stylus-loader' }
-      { test: /\.(png|jpg|gif|ico)$/, loader: 'url-loader?limit=500000' }
+      { test: /\.(png|jpg|gif|ico)$/, loader: 'url-loader?limit=500' }
     ]
   postcss: [autoprefixer]
   plugins: [
@@ -28,4 +28,5 @@ module.exports = webpackConfig =
 
 if process.env.PROD
   webpackConfig.watch = false
+  webpackConfig.output.publicPath = 'http://elyssemusic.com'
   webpackConfig.output.path = "#{__dirname}/../elyssemusic.com"

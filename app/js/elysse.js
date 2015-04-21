@@ -1,4 +1,4 @@
-require('../css/app.styl')
+require('../css/app.styl');
 
 var setActivePage = function() {
   var previous = document.querySelector('.active');
