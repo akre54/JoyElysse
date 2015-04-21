@@ -24,8 +24,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "rm -rf public && webpack",
-    "build-prod": "PROD=true webpack"
+    "build": "PROD=true webpack"
   },
   "engines": {
     "node": "0.10.x"
