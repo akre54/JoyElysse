@@ -9,7 +9,7 @@ $contact-link-color    = rgb(64,  63,  61)
 $hero-nav-color        = rgb(255, 255, 255)
 
 $page-bg-color         = rgb(240, 237, 228)
-$contact-bg-color      = rgb(236, 239, 235)
+$contact-bg-color      = rgb(239, 236, 235)
 $mailing-list-bg-color = rgb(240, 237, 228)
 $shows-bg-color        = rgb(210, 94,  79)
 
@@ -177,7 +177,7 @@ label
   display: block
 
 input[type="email"]
-  color: white
+  color: $main-text-color
   flex: 1
   padding: 7px
   line-height: 1.33
@@ -197,21 +197,19 @@ input[type="email"]
     color: $placeholder-color
 
 input[type="submit"]
-  -webkit-appearance: button
-  -moz-appearance: button
   font-weight: 400
   line-height: 1.33
-  border: 1px solid transparent
-  border-bottom: 1px solid #ccc
+  border: 1px solid #ccc
   background-color: transparent
-  padding: .5em
+  margin: .25em
+  padding: .25em
   padding-bottom: 8px
-
-  &:hover
-    border-bottom: 2px solid #ccc
 
   &:active, &:focus
     border-bottom: 2px solid green
+
+input:hover
+  border-bottom: 2px solid #ccc
 
 
 ////////////////////
