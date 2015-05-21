@@ -2,19 +2,24 @@
 // VARS //
 //////////
 
-$main-text-color       = rgb(64,  63,  61)
-$link-color            = rgb(255, 255, 255)
-$header-link-color     = rgb(127, 126, 121)
-$contact-link-color    = rgb(64,  63,  61)
-$hero-nav-color        = rgb(255, 255, 255)
+$main-text-color        = rgb(64,  63,  61)
+$link-color             = rgb(255, 255, 255)
+$header-link-color      = rgb(127, 126, 121)
+$contact-link-color     = rgb(64,  63,  61)
+$hero-nav-color         = rgb(255, 255, 255)
+$hero-nav-hover-color   = rgb(127, 126, 121)
 
-$page-bg-color         = rgb(240, 237, 228)
-$contact-bg-color      = rgb(239, 236, 235)
-$mailing-list-bg-color = rgb(240, 237, 228)
-$shows-bg-color        = rgb(210, 94,  79)
+$page-bg-color          = rgb(240, 237, 228)
+$contact-bg-color       = rgb(239, 236, 235)
+$mailing-list-bg-color  = rgb(240, 237, 228)
+$shows-bg-color         = rgb(210, 94,  79)
 
-$placeholder-color     = rgb(108, 94,  84)
+$placeholder-color      = rgb(108, 94,  84)
 
+$soundcloud-hover-color = rgb(255, 136, 0)
+$fb-hover-color         = rgb(59,  89,  152)
+$youtube-hover-color    = rgb(187, 0,   0)
+$instagram-hover-color  = rgb(81,  127, 164)
 
 
 /////////////////
@@ -54,12 +59,25 @@ header
 .social__links
   display: flex
 
-  .fa::before
-    font-size: 1.5rem
-
   a
     margin: 1em
     color: $header-link-color
+    transition: color .5s ease-in-out
+
+  .fa::before
+    font-size: 1.5rem
+
+  .fa-soundcloud:hover
+    color: $soundcloud-hover-color
+
+  .fa-facebook-square:hover
+    color: $fb-hover-color
+
+  .fa-youtube:hover
+    color: $youtube-hover-color
+
+  .fa-instagram:hover
+    color: $instagram-hover-color
 
 h1
   color: $hero-nav-color
@@ -80,9 +98,13 @@ nav
     font-size: 1.5em
     font-size: 4vmin
     font-style: italic
-    border-right: .05em solid
+    border-right: .05em solid $hero-nav-color
     padding-left: .2em
     padding-right: .5em
+    transition: color 1s ease-in-out
+
+    &:hover
+      color: $hero-nav-hover-color
 
     &:last-of-type
       border: none

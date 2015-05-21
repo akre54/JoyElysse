@@ -21,7 +21,7 @@ module.exports = webpackConfig =
     ]
   postcss: [autoprefixer]
   plugins: [
-    apply: -> rimraf.sync "#{webpackConfig.output.path}/*"
+    # apply: -> rimraf.sync "#{webpackConfig.output.path}/*"
     new ExtractTextPlugin 'style.css'
     new HtmlWebpackPlugin
       template: 'app/index.html'
