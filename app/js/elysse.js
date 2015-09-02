@@ -1,13 +1,13 @@
-require('../css/app.styl')
-require('file?name=favicon.ico!../assets/images/favicon.ico')
+import '../css/app.styl'
+import 'file?name=favicon.ico!../assets/images/favicon.ico'
 
-var each = [].forEach
+const each = [].forEach
 
-var setActivePage = function() {
-  each.call(document.querySelectorAll('.active'), function(el) { el.classList.remove('active') })
+const setActivePage = () => {
+  each.call(document.querySelectorAll('.active'), el => el.classList.remove('active'))
 
-  var loc = (location.hash || '#home')
-  var id = loc + '-page'
+  const loc = (location.hash || '#home')
+  const id = `${loc}-page`
   document.querySelector(id).classList.add('active')
 
   document.body.className = document.body.className.replace(/\b\w+-page\b/, '').trim()
@@ -16,7 +16,7 @@ var setActivePage = function() {
   if (loc === '#home') {
     window.history.replaceState(null, document.title, '/')
   } else {
-    document.querySelector('.page__links a[href="'+ loc + '"]').classList.add('active')
+    document.querySelector(`.page__links a[href="${loc}"]`).classList.add('active')
   }
 }
 
@@ -24,11 +24,11 @@ window.addEventListener('hashchange', setActivePage, false)
 setActivePage()
 
 // handle escape key
-document.addEventListener('keyup', function(e) {
+document.addEventListener('keyup', e => {
   if (e.which === 27) location.hash = '#home'
 })
 
 // HTML5's :invalid psudo-selector is too aggressive (it's invalid on page load)
-var email = document.querySelector('input[type="email"')
-email.addEventListener('blur', function() { this.classList.toggle('invalid', !this.validity.valid) }, false)
-email.addEventListener('keyup', function() { this.classList.remove('invalid') }, false)
+const email = document.querySelector('input[type="email"')
+email.addEventListener('blur', e => email.classList.toggle('invalid', !email.validity.valid))
+email.addEventListener('keyup', e => email.classList.remove('invalid'))
