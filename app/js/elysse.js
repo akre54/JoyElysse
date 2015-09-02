@@ -1,12 +1,18 @@
 require('../css/app.styl')
 require('file?name=favicon.ico!../assets/images/favicon.ico')
 
+var each = [].forEach
+
 var setActivePage = function() {
   var previous = document.querySelector('.active')
   previous && previous.classList.remove('active')
 
-  var id = (location.hash || '#home') + '-page'
+  var loc = (location.hash || '#home')
+  var id = loc + '-page'
   document.querySelector(id).classList.add('active')
+
+  each.call(document.querySelectorAll('.page__links a'), function(el) { el.classList.remove('active') })
+  document.querySelector('.page__links a[href="'+ loc + '"]').classList.add('active')
 
   document.body.className = document.body.className.replace(/\b\w+-page\b/, '').trim()
   document.body.classList.add(id.slice(1))
