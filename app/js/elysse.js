@@ -1,25 +1,28 @@
-require('../css/app.styl');
-require('file?name=favicon.ico!../assets/images/favicon.ico');
+require('../css/app.styl')
+require('file?name=favicon.ico!../assets/images/favicon.ico')
 
 var setActivePage = function() {
-  var previous = document.querySelector('.active');
-  previous && previous.classList.remove('active');
+  var previous = document.querySelector('.active')
+  previous && previous.classList.remove('active')
 
-  var id = (location.hash || '#home') + '-page';
-  document.querySelector(id).classList.add('active');
+  var id = (location.hash || '#home') + '-page'
+  document.querySelector(id).classList.add('active')
 
-  if (id === '#home-page') window.history.replaceState(null, document.title, '/');
+  document.body.className = document.body.className.replace(/\b\w+-page\b/, '').trim()
+  document.body.classList.add(id.slice(1))
+
+  if (id === '#home-page') window.history.replaceState(null, document.title, '/')
 }
 
-window.addEventListener('hashchange', setActivePage, false);
-setActivePage();
+window.addEventListener('hashchange', setActivePage, false)
+setActivePage()
 
 // handle escape key
 document.addEventListener('keyup', function(e) {
-  if (e.which === 27) location.hash = '#home';
-});
+  if (e.which === 27) location.hash = '#home'
+})
 
 // HTML5's :invalid psudo-selector is too aggressive (it's invalid on page load)
-var email = document.querySelector('input[type="email"');
-email.addEventListener('blur', function() { this.classList.toggle('invalid', !this.validity.valid); }, false);
-email.addEventListener('keyup', function() { this.classList.remove('invalid'); }, false);
+var email = document.querySelector('input[type="email"')
+email.addEventListener('blur', function() { this.classList.toggle('invalid', !this.validity.valid) }, false)
+email.addEventListener('keyup', function() { this.classList.remove('invalid') }, false)

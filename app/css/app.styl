@@ -4,9 +4,9 @@
 
 $main-text-color        = rgb(64,  63,  61)
 $link-color             = rgb(255, 255, 255)
-$header-link-color      = rgb(134, 102, 122)
 $contact-link-color     = rgb(64,  63,  61)
-$hero-nav-color         = rgb(134, 102, 122)
+$hero-nav-default-color = rgb(134, 102, 122)
+$hero-nav-second-color  = rgb(238, 204, 186)
 
 $page-bg-color          = rgb(240, 237, 228)
 $contact-bg-color       = rgb(239, 236, 235)
@@ -45,9 +45,17 @@ a
   color: $link-color
   text-decoration: none
 
-////////////
-// HEADER //
-////////////
+/////////
+// nav //
+/////////
+
+nav
+  text-align: center
+  font-size: 1.5rem
+  height: 100vh
+  float: left
+  display: flex
+  position: fixed
 
 .social__links
   display: flex
@@ -56,7 +64,7 @@ a
 
   a
     margin: .5rem
-    color: $header-link-color
+    color: $hero-nav-default-color
     transition: color .5s ease-in-out
 
   .fa::before
@@ -75,7 +83,7 @@ a
     color: $instagram-hover-color
 
 h1
-  color: $hero-nav-color
+  color: $hero-nav-default-color
   font-family: 'Tangerine', cursive
   font-size: 6rem
   font-weight: normal
@@ -83,20 +91,12 @@ h1
   margin: 0
   margin-bottom: .1em
 
-nav
-  text-align: center
-  font-size: 1.5rem
-  height: 100vh
-  float: left
-  display: flex
-  position: fixed
-
 .page__links
   list-style-type: none
   padding: 0
 
   a
-    color: $hero-nav-color
+    color: $hero-nav-default-color
     position: relative
     font-family: 'Source Sans Pro', sans-serif
     font-size: 1.5rem
@@ -113,7 +113,7 @@ nav
       height: 2px
       bottom: 0
       left: 0
-      background-color: $hero-nav-color
+      background-color: $hero-nav-default-color
       visibility: hidden
       transform: scaleX(0)
       transition: all 0.3s ease-in-out 0s
@@ -126,6 +126,14 @@ nav
   margin-top: auto
   margin-bottom: auto
 
+
+// Fix for bad contrast
+.shows-page
+  h1
+    color: $hero-nav-second-color
+  .social__links, .page__links
+    a
+      color: $hero-nav-second-color
 
 /////////////
 // CONTENT //
@@ -158,11 +166,6 @@ nav
 .content
   margin-left: $nav-width
 
-.close-btn
-  font-size: 80%
-  color: rgba(0, 0, 0, .5)
-  margin: 1rem
-
 #home-page
   background-image: url('../assets/images/joy-headshot-full.jpg')
 
@@ -183,13 +186,12 @@ nav
   background-image: url('../assets/images/mailing-list-bg.jpg')
   background-size: cover
 
+  .content
+    margin-top: 25%
+
 #contact-page
   background-image: url('../assets/images/contact-bg.jpg')
   background-color: $contact-bg-color
-
-  .content
-    transition: padding-left .5s ease-in-out
-    padding-left: 80vh
 
   a
     color: $contact-link-color
@@ -293,9 +295,6 @@ input:hover
     padding: 0 !important
     max-width: none !important
 
-  .close-btn
-    display: none
-
 // High-rez unscaled screens (e.g. Kindle Fire HDX)
 @media only screen and (min-width: 2550px) and (-webkit-max-device-pixel-ratio: 2)
   html
@@ -307,10 +306,7 @@ input:hover
   html
     font-size: 85% !important
 
-  #contact-page .content
-    padding-left: 1rem !important
-
 // Portrait iPads
 @media screen and (min-aspect-ratio: 5/3)
   #contact-page .content
-    padding-left: 110vh !important
+    // padding-left: 110vh !important
