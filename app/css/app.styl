@@ -104,9 +104,6 @@ h1
     font-size: 1.5rem
     transition: color 1s ease 0s, text-decoration 1s ease 0s
 
-    &:last-of-type
-      border: none
-
     &:before
       content: ""
       position: absolute
@@ -265,8 +262,11 @@ input:hover
     background-color: #f0ede4
     background-image: url('../assets/images/joy-headshot-full.jpg')
     background-size: cover
+    background-position-x: -1 * $nav-width
 
   body
+    display: flex
+
     background-color: $mobile-bg-mask
 
   header
@@ -280,11 +280,24 @@ input:hover
 
 
   nav
-    display: none
+    position: static
+    height: auto
+    float: none
+    flex: 1
+    order: -1
+
+    justify-content: center
+
+
+  .nav__wrapper
+    margin-top: none
+    margin-bottom: none
+    width: 100vw
 
   .page
     height: auto
-    width: auto
+    width: 100vw
+    flex: 1
     position: static
     margin: 2rem 0
     padding: 1rem
@@ -296,7 +309,7 @@ input:hover
     visibility: visible
 
   .content
-    padding: 0 !important
+    margin: 0 !important
     max-width: none !important
 
 // High-rez unscaled screens (e.g. Kindle Fire HDX)
