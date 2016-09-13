@@ -2,27 +2,29 @@
 // VARS //
 //////////
 
-$main-text-color        = rgb(64,  63,  61)
+$root-font-size         = 120%
+
+$main-text-color        = rgb(180, 180, 180)
 $link-color             = rgb(255, 255, 255)
 $contact-link-color     = rgb(64,  63,  61)
-$hero-nav-default-color = rgb(134, 102, 122)
-$hero-nav-second-color  = rgb(238, 204, 186)
+$hero-nav-default-color = rgb(255, 255, 255)
 
-$page-bg-color          = rgb(240, 237, 228)
-$contact-bg-color       = rgb(239, 236, 235)
-$mailing-list-bg-color  = rgb(240, 237, 228)
-$shows-bg-color         = rgb(210, 94,  79)
+$page-bg-color          = rgb(5,   5,   5)
 
 $mobile-bg-mask         = rgba(255, 255, 255, .7)
 
-$placeholder-color      = rgb(108, 94,  84)
+$placeholder-color      = rgb(108, 107,  106)
 
 $soundcloud-hover-color = rgb(255, 136, 0)
 $fb-hover-color         = rgb(59,  89,  152)
 $youtube-hover-color    = rgb(187, 0,   0)
 $instagram-hover-color  = rgb(81,  127, 164)
 
-$nav-width = 12rem
+$nav-width = 28rem
+
+@font-face
+  font-family: Spire
+  src: url('../assets/spireextralightalt.ttf')
 
 
 /////////////////
@@ -33,7 +35,7 @@ html, body
   height: 100%
   min-width: 300px
   font-family: 'Open Sans Condensed', sans-serif
-  font-size: 120%
+  font-size: $root-font-size
   color: $main-text-color
   box-sizing: border-box
   overflow: hidden
@@ -55,14 +57,13 @@ nav
   text-align: center
   font-size: 1.5rem
   height: 100vh
-  float: left
   display: flex
   position: fixed
 
 .social__links
   display: flex
   justify-content: space-around
-  margin: 1rem
+  padding: 0 1em
 
   a
     margin: .5rem
@@ -86,12 +87,14 @@ nav
 
 h1
   color: $hero-nav-default-color
-  font-family: 'Tangerine', cursive
+  font-family: Spire, sans-serif;
   font-size: 6rem
   font-weight: normal
   text-align: center
+  letter-spacing: .58em
   margin: 0
   margin-bottom: .1em
+  padding-left: .5em
 
 .page__links
   list-style-type: none
@@ -125,17 +128,6 @@ h1
   margin-bottom: auto
 
 
-// Fix for bad contrast
-.shows-page
-  h1
-    color: $hero-nav-second-color
-  .social__links, .page__links
-    a, a:before
-      color: $hero-nav-second-color
-  .page__links a:before
-    background-color: $hero-nav-second-color
-
-
 /////////////
 // CONTENT //
 /////////////
@@ -153,7 +145,7 @@ h1
   background-color: $page-bg-color
   background-repeat: no-repeat
   background-position: 0% center
-  background-size: contain
+  background-size: cover
   background-attachment: fixed
 
   transition: visibility 0s linear 1s, opacity 1s ease-in-out
@@ -168,31 +160,28 @@ h1
   margin-left: $nav-width
 
 #home-page
-  background-image: url('../assets/images/joy-headshot-full.jpg')
+  background-image: url('../assets/images/Joy87784clean.jpg')
 
   opacity: 1
   visibility: visible
 
+#about-page
+  background-image: url('../assets/images/Joy87858new.jpg')
+
 #shows-page
-  background-color: $shows-bg-color
-  background-image: url('../assets/images/shows-bg.jpg')
-  background-size: cover
-  color: #e5e3da
+  background-image: url('../assets/images/Joy87541.jpg')
 
   .bit-share-links, .bit-share-text
     display: none
 
 #mailing-list-page
-  background-color: $mailing-list-bg-color
-  background-image: url('../assets/images/mailing-list-bg.jpg')
-  background-size: cover
+  background-image: url('../assets/images/Joy87781.jpg')
 
   .content
     margin-top: 25%
 
 #contact-page
-  background-image: url('../assets/images/contact-bg.jpg')
-  background-color: $contact-bg-color
+  background-image: url('../assets/images/Joy87815 1.jpg')
 
   a
     color: $contact-link-color
@@ -204,6 +193,9 @@ h1
 ///////////////////////
 // Mailing list form //
 ///////////////////////
+
+form
+  margin-left: 16rem
 
 .input-group
   margin: 1em 0

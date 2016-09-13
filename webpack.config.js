@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const rimraf            = require('rimraf')
+const path              = require('path')
 
 const autoprefixer = require('autoprefixer-core')
 
@@ -18,11 +19,14 @@ const webpackConfig = module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+  resolve: {
+    root: path.join(__dirname, 'app')
+  },
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel' },
       { test: /\.styl$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus') },
-      { test: /\.(png|jpg|gif)$/, loader: 'url?limit=500' }
+      { test: /\.(png|jpg|gif|ttf)$/, loader: 'url?limit=500' }
     ]
   },
   postcss: [autoprefixer],
