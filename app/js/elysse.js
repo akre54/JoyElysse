@@ -10,9 +10,6 @@ const setActivePage = () => {
   const id = `${loc}-page`
   document.querySelector(id).classList.add('active')
 
-  document.body.className = document.body.className.replace(/\b\w+-page\b/, '').trim()
-  document.body.classList.add(id.slice(1))
-
   if (loc === '#home') {
     window.history.replaceState(null, document.title, '/')
   } else {
