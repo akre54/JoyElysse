@@ -2,23 +2,29 @@
 // VARS //
 //////////
 
-$root-font-size         = 120%
-
 $main-text-color        = rgb(180, 180, 180)
 $link-color             = rgb(255, 255, 255)
-$contact-link-color     = rgb(64,  63,  61)
+$contact-link-color     = rgb(185, 185, 185)
 $hero-nav-default-color = rgb(255, 255, 255)
 
-$page-bg-color          = rgb(5,   5,   5)
+$background-color       = rgb(5, 5, 5)
 
 $mobile-bg-mask         = rgba(255, 255, 255, .7)
 
+$input-border-color     = rgb(204, 204, 204)
 $placeholder-color      = rgb(108, 107,  106)
 
 $soundcloud-hover-color = rgb(255, 136, 0)
 $fb-hover-color         = rgb(59,  89,  152)
 $youtube-hover-color    = rgb(187, 0,   0)
 $instagram-hover-color  = rgb(81,  127, 164)
+
+$home-page-bg           = url('../assets/images/Joy87784clean.jpg')
+$about-page-bg          = url('../assets/images/Joy87858new.jpg')
+$shows-page-bg          = url('../assets/images/Joy87541.jpg')
+$mailing-list-page-bg   = url('../assets/images/Joy87781.jpg')
+$contact-page-bg        = url('../assets/images/Joy87815 1.jpg')
+$mobile-bg              = url('../assets/images/joy-headshot-full.jpg')
 
 $nav-width = 28rem
 
@@ -35,7 +41,8 @@ html, body
   height: 100%
   min-width: 300px
   font-family: 'Open Sans Condensed', sans-serif
-  font-size: $root-font-size
+  font-size: 120%
+  background-color: $background-color
   color: $main-text-color
   box-sizing: border-box
   overflow: hidden
@@ -160,31 +167,31 @@ h1
   margin-left: $nav-width
 
 #home-page
-  background-image: url('../assets/images/Joy87784clean.jpg')
+  background-image: $home-page-bg
 
   opacity: 1
   visibility: visible
 
 #about-page
-  background-image: url('../assets/images/Joy87858new.jpg')
+  background-image: $about-page-bg
 
 #shows-page
-  background-image: url('../assets/images/Joy87541.jpg')
+  background-image: $shows-page-bg
 
   .bit-share-links, .bit-share-text
     display: none
 
 #mailing-list-page
-  background-image: url('../assets/images/Joy87781.jpg')
+  background-image: $mailing-list-page-bg
 
   .content
     margin-top: 25%
 
 #contact-page
-  background-image: url('../assets/images/Joy87815 1.jpg')
+  background-image: $contact-page-bg
 
-  a
-    color: $contact-link-color
+#contact__email
+  color: $contact-link-color
 
 
 #contact__email, #shows-page tr:not(.bit-header)
@@ -228,7 +235,7 @@ input[type="email"]
 input[type="submit"]
   font-weight: 400
   line-height: 1.33
-  border: 1px solid #ccc
+  border: 1px solid $input-border-color
   background-color: transparent
   margin: .25em
   padding: .25em
@@ -238,7 +245,7 @@ input[type="submit"]
     border-bottom: 2px solid green
 
 input:hover
-  border-bottom: 2px solid #ccc
+  border-bottom: 2px solid $input-border-color
 
 
 ////////////////////
@@ -252,7 +259,7 @@ input:hover
 
   html
     background-color: #f0ede4
-    background-image: url('../assets/images/joy-headshot-full.jpg')
+    background-image: $mobile-bg
     background-size: cover
     background-position-x: -1 * $nav-width
 
