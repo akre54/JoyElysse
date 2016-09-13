@@ -16,7 +16,7 @@ const setActivePage = () => {
   if (loc === '#home') {
     window.history.replaceState(null, document.title, '/')
   } else {
-    document.querySelector(`.page__links a[href="${loc}"]`).classList.add('active')
+    document.querySelector(`.page-links a[href="${loc}"]`).classList.add('active')
   }
 }
 
