@@ -103,7 +103,7 @@ h1
   margin-bottom: .1em
   padding-left: .5em
 
-.page__links
+.page-links
   list-style-type: none
   padding: 0
 
@@ -190,11 +190,11 @@ h1
 #contact-page
   background-image: $contact-page-bg
 
-#contact__email
+#contact-email
   color: $contact-link-color
 
 
-#contact__email, #shows-page tr:not(.bit-header)
+#contact-email, #shows-page tr:not(.bit-header)
   user-select: initial
 
 ///////////////////////
@@ -278,6 +278,12 @@ input:hover
   a, h1, .content
     color: #555 !important
 
+  h1
+    letter-spacing: .2em
+    padding-left: 0
+
+  #contact-email
+    font-size: 1rem
 
   nav
     height: auto
@@ -293,12 +299,12 @@ input:hover
     margin-bottom: 0
     width: 100vw
 
-  .page__links
+  .page-links
     display: none
 
   .pages
     height: 58vh
-    margin-top: 42vh
+    margin-top: 45vh
     overflow-y: scroll
 
   #home-page
@@ -324,6 +330,9 @@ input:hover
   .content
     margin: 0 !important
     max-width: none !important
+
+  form
+    margin-left: 0
 
 // High-rez unscaled screens (e.g. Kindle Fire HDX)
 @media only screen and (min-width: 2550px) and (-webkit-max-device-pixel-ratio: 2)
