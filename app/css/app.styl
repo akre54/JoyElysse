@@ -20,11 +20,11 @@ $fb-hover-color         = rgb(59,  89,  152)
 $youtube-hover-color    = rgb(187, 0,   0)
 $instagram-hover-color  = rgb(81,  127, 164)
 
-$home-page-bg           = url('../assets/images/Joy87784clean.jpg')
-$about-page-bg          = url('../assets/images/Joy87858new.jpg')
-$shows-page-bg          = url('../assets/images/Joy87541.jpg')
-$mailing-list-page-bg   = url('../assets/images/Joy87781.jpg')
-$contact-page-bg        = url('../assets/images/Joy87815 1.jpg')
+$home-page-bg           = url('../assets/images/JoyWebPageCropped.jpg')
+$about-page-bg          = url('../assets/images/JoyWebPageCropped.jpg')
+$shows-page-bg          = url('../assets/images/JoyWebPageCropped.jpg')
+$mailing-list-page-bg   = url('../assets/images/JoyWebPageCropped.jpg')
+$contact-page-bg        = url('../assets/images/JoyWebPageCropped.jpg')
 $mobile-bg              = url('../assets/images/joy-headshot-full.jpg')
 
 $nav-width = 28rem
@@ -52,6 +52,14 @@ html, body
 *, *:before, *:after
   box-sizing: inherit
   -webkit-touch-callout: none
+
+body
+  background-color: $page-bg-color
+  background-image: $home-page-bg
+  background-repeat: no-repeat
+  background-position: 0% center
+  background-size: cover
+  background-attachment: fixed
 
 a
   color: $link-color
@@ -150,13 +158,6 @@ h1
   opacity: 0
   visibility: hidden
 
-  background-color: $page-bg-color
-  background-image: $mailing-list-page-bg
-  background-repeat: no-repeat
-  background-position: 0% center
-  background-size: cover
-  background-attachment: fixed
-
   transition: visibility 0s linear 1s, opacity 1s ease-in-out
 
   &.active
@@ -173,6 +174,20 @@ h1
 
 #about-page
   // background-image: $about-page-bg
+
+  .content
+    background-color: rgba(200, 200, 200, .6)
+    border-radius: 5px
+    margin-top: 1em
+    margin-bottom: 1em
+    margin-right: 1em
+    padding: 1em 1.5em
+
+.about-page__text
+  color: rgb(235, 235, 235)
+  overflow-y: auto
+  height: 85vh
+  font-size: 80%
 
 #shows-page
   // background-image: $shows-page-bg
