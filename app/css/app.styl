@@ -272,17 +272,9 @@ input:hover
     min-width: initial
     overflow: auto
 
-  html
-    background-color: $mobile-bg-color
-    background-image: $mobile-bg
-    background-size: cover
-    background-position-x: -1 * $nav-width
-
   body
     display: flex
     flex-direction: column
-
-    background-color: $mobile-bg-mask
 
   header
     width: 100%
@@ -290,8 +282,11 @@ input:hover
     align-items: center
     margin: 0
 
-  a, h1, .content
-    color: #555 !important
+  #about-page .content
+    background-color: none
+
+  .about-page__text
+    height: initial
 
   h1
     letter-spacing: .2em
