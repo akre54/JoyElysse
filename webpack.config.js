@@ -26,7 +26,7 @@ const webpackConfig = module.exports = {
     loaders: [
       { test: /\.js$/, loader: 'babel' },
       { test: /\.styl$/, loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus') },
-      { test: /\.(png|jpg|gif|ttf)$/, loader: 'url?limit=500' }
+      { test: /\.(png|jpg|gif|ttf|woff|eot|svg)$/, loader: 'url?limit=500' }
     ]
   },
   postcss: [autoprefixer],
