@@ -6,9 +6,11 @@ $main-text-color        = rgb(180, 180, 180)
 $link-color             = rgb(255, 255, 255)
 $contact-link-color     = rgb(185, 185, 185)
 $hero-nav-default-color = rgb(255, 255, 255)
+$about-page-text-color  = rgb(255, 255, 255)
 
 $background-color       = rgb(91,  91,  91)
 
+$about-page-bg-color    = rgba(200, 200, 200, .4)
 $mobile-bg-mask         = rgba(255, 255, 255, .7)
 $mobile-bg-color        = rgb(240, 237, 228)
 
@@ -187,7 +189,7 @@ h1
   // background-image: $about-page-bg
 
   .content
-    background-color: rgba(200, 200, 200, .4)
+    background-color: $about-page-bg-color
     border-radius: 5px
     margin-top: 1em
     margin-bottom: 1em
@@ -195,7 +197,7 @@ h1
     max-width: 45vw
 
 .about-page__text
-  color: rgb(235, 235, 235)
+  color: $about-page-text-color
   overflow-y: auto
   height: 75vh
   font-size: 80%
