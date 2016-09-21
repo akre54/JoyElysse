@@ -43,5 +43,5 @@ const webpackConfig = module.exports = {
 if (process.env.PROD) {
   webpackConfig.watch = false
   webpackConfig.output.publicPath = 'http://elyssemusic.com/'
-  webpackConfig.output.path = `${__dirname}/../elyssemusic.com`
+  webpackConfig.output.path = `${process.env.HOME}/elyssemusic.com`
 }
