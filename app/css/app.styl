@@ -54,6 +54,7 @@ html, body
   width: 100vw
   min-width: 300px
   font-family: 'NanumMyeongjo', serif
+  letter-spacing: .09em
   font-size: 120%
   background-color: $background-color
   color: $main-text-color
@@ -133,6 +134,7 @@ h1
     position: relative
     font-family: 'Open Sans', sans-serif
     font-size: 1.5rem
+    letter-spacing: 0.04em
     transition: color 1s ease 0s, text-decoration 1s ease 0s
 
     &:before
@@ -202,13 +204,12 @@ h1
   overflow-y: auto
   height: 75vh
   font-size: 80%
-  letter-spacing: .1em
-  text-align: justify
   line-height: 1.6
 
 #shows-page
   // background-image: $shows-page-bg
   display: block
+  letter-spacing: normal
 
   .bit-share-links, .bit-share-text
     display: none
@@ -386,6 +387,6 @@ input:hover
     // padding-left: 110vh !important
 
 // IE 10 & 11
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
-    input[type="email"] 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+    input[type="email"]
      min-width: 320px
