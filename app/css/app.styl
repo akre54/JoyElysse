@@ -88,6 +88,8 @@ nav
   display: flex
   position: fixed
   z-index: 9999
+  flex-direction: column
+  justify-content: center
 
 .social__links
   display: flex
@@ -152,10 +154,6 @@ h1
     &:hover:before, &.active:before
       visibility: visible
       transform: scaleX(1)
-
-.nav__wrapper
-  margin-top: auto
-  margin-bottom: auto
 
 
 /////////////
@@ -319,16 +317,11 @@ input:hover
 
   nav
     height: auto
-    float: none
+    width: 100%
     flex: 1
 
     justify-content: center
-
-
-  .nav__wrapper
-    margin-top: 2em
-    margin-bottom: 0
-    width: 100vw
+    align-items: center
 
   .page-links
     display: none
